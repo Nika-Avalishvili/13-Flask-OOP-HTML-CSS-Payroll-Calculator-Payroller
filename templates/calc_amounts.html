@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block body %}
+<section class="section-how" id="how">
+  <!-- STEP  1 -->
+  <div class="container">
+    <h2 class="heading-secondary">
+      Breakdown of Your Personal Contributions
+    </h2>
+  </div>
+  <div class="container grid grid--2--cols grid--center--fov">
+    <div class="step-text-box">
+      <p class="step-number">01</p>
+
+      <h3 class="heading-tertiary">
+        Personal Income Tax (PIT)
+      </h3>
+      <p class="step-description">
+        From your monthly gross salary, your employer transfers {{ income_tax }}
+        GEL to the state budget. The genral PIT rate in Georgia is 20%, but it can be
+        different or exempted from taxes based on the payment purpose.
+      </p>
+    </div>
+    <div class="step-img-box">
+      <img
+        src="static/pics/pit.jpeg"
+        class="step-img"
+        alt="Personal income tax"
+      />
+    </div>
+
+    <!-- STEP  2 -->
+    <div class="step-img-box">
+      <img
+        src="static/pics/pf2.jpg"
+        class="step-img"
+        alt="Pensions fund"
+      />
+    </div>
+
+    <div class="step-text-box">
+      <p class="step-number">02</p>
+
+      <h3 class="heading-tertiary">Pensions Fund (PF)</h3>
+      <p class="step-description">
+        If you are involved in the PF scheme, 2% of your gross salary will
+        be transferred to the individual pension account in the pension agency
+        by the employer. In addition, the employer and the state treasury
+        contribute 2% of the gross salary each to the participant's pension account.
+      </p>
+      <p class="step-description">
+        In your case, the employer transfers {{ employee_contribution }} GEL from your salary, also the employer
+        and the state contribute to your personal PF account {{ employer_contribution }} - {{ pf_agency_contribution }} GEL respectively. Thus,
+        the total PF contribution on your account is {{ total_pf_contribution }} GEL.
+      </p>
+    </div>
+
+    <!-- STEP  3 -->
+    <div class="step-text-box">
+      <p class="step-number">03</p>
+
+      <h3 class="heading-tertiary">Value Added Tax (VAT)</h3>
+      <p class="step-description">
+        Your remaining net salary is {{ net_salary }} GEL after deducting PIT and PF contributions.
+        But it does not mean you have finished paying taxes to the State Budget.
+        Most of the products or services you consume are taxable by VAT which is
+        18% in Georgia. For the exam, if you purchase chocolate and pay 5.90 GEL,
+        the seller transfers 18% to the budget from your payment.
+        To calculate roughly, you pay {{ vat_expenses }} GEL VAT from your net salary.
+      </p>
+    </div>
+
+    <div class="step-img-box">
+      <img
+        src="static/pics/vat.jpg"
+        class="step-img"
+        alt="Value added tax"
+      />
+    </div>
+  </div>
+</section>
+
+{% endblock %}

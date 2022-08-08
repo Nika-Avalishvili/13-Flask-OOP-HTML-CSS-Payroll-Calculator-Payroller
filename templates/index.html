@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block body %}
+<section class="section-cta" id="cta">
+    <div class="container">
+      <div class="cta">
+        <div class="cta-text-box">
+
+          <h2 class="heading-secondary">Calculate your contributions to the State Budget!</h2>
+          <p class="cta-text">Using the form, you can check detailed information about tax payments and
+            pension fund contribution that deducts your salary</p>
+
+          <form method="POST" action="calc_amounts" class="cta-form grid grid--2--cols">
+            <div>
+              <label for="Gross Salary">Monthly Gross Salary</label>
+              <input type="number" name="salary" width="10" required="required" min="0" placeholder="3500"/>
+            </div>
+            <div>
+              <label for="Tax exemption">Tax Exemption, if any</label>
+              <input type="number" name="tax_exemption" width="10" min="0" placeholder="200"/>
+            </div>
+            <div>
+              <label for="Monthly saving">Monthly Savings, if any</label>
+              <input type="number" name="saving" width="10" min="0" placeholder="500"/>
+            </div>
+            <div>
+              <label for="Monthly saving">Pensions payer status</label>
+              <select name="PF_status" id="select-where" required>
+              <option value="yes">I'm involved in scheme</option>
+              <option value="no">I'm NOT involved in scheme</option>
+              <option value="yes">I'm not sure</option>
+              </select>
+            </div>
+            <div>
+              <input value="Calculate"  class="btn btn--form button-calculator" type="SUBMIT"/>
+            </div>
+            </form>
+      </div>
+      <div
+          class="cta-img-box"
+          role="img"
+          aria-label="Accountant">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
